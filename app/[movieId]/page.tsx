@@ -5,6 +5,8 @@ import facebook from '@/public/svg/facebook.svg'
 import x from '@/public/svg/x.svg'
 import insta from '@/public/svg/instagram.svg'
 import Image from "next/image";
+import TopCastSection from "@/components/TopCastSection";
+import Recommendations from "@/components/Recommendations";
 
 export interface MovieDetailsProps {
     backdropImgUrl: string;
@@ -78,7 +80,11 @@ export default async function MovieDetailPage({
             <div className="mx-auto max-w-screen-xl py-8 grid grid-cols-5 gap-5">
 
                 <div className="col-span-4">
+                    <TopCastSection id={movieId}/>
 
+                    <hr className="my-6"/>
+
+                    <Recommendations/>
                 </div>
 
                 <div className="col-span-1">
@@ -121,7 +127,6 @@ export default async function MovieDetailPage({
                             heading="Revenue"
                             value={formatToPrice(details?.revenue)}
                         />
-
                     </div>
                 </div>
             </div>
