@@ -6,22 +6,22 @@ import search from '@/public/svg/search.svg'
 
 export default function Header() {
     return (
-        <div 
-        className="w-full bg-[#032541] h-[64px] flex items-center"
+        <div
+            className="w-full bg-[#032541] h-[64px] flex items-center"
         >
             <div
-            className="w-full max-w-screen-2xl px-10 flex justify-between mx-auto items-center"
+                className="w-full max-w-screen-xl px-10 xl:px-0 flex justify-between mx-auto items-center"
             >
                 <div
-                className="flex gap-4 items-center justify-start"
+                    className="flex gap-4 items-center justify-start"
                 >
                     <Image
-                    src={tmdbLogo}
-                    alt='logo'
-                    className='h-[20px] object-contain'
+                        src={tmdbLogo}
+                        alt='logo'
+                        className='h-[20px] w-auto object-contain'
                     />
 
-                    <ul className='-ml-11 flex gap-5 text-[16px] font-semibold text-white'>
+                    <ul className='flex gap-5 text-[16px] font-semibold text-white'>
                         <li>
                             Movies
                         </li>
@@ -37,16 +37,16 @@ export default function Header() {
                     </ul>
                 </div>
 
-                <div className='flex gap-6 items-center text-white font-semibold text-[16px] px-8'>
+                <div className='flex gap-6 items-center text-white font-semibold text-[16px] '>
 
-                <Image
-                    src={plusIcon}
-                    alt='plus'
-                    className='h-[22px] w-[22px] object-contain'
+                    <Image
+                        src={plusIcon}
+                        alt='plus'
+                        className='h-[22px] w-[22px] object-contain'
                     />
 
                     <div
-                    className='border border-white rounded-sm px-0.5'
+                        className='border border-white rounded-sm px-0.5'
                     >
                         <p className='font-medium text-white text-[14px]'>EN</p>
                     </div>
@@ -55,9 +55,9 @@ export default function Header() {
                     <p>Join TMDB</p>
 
                     <Image
-                    src={search}
-                    alt='search'
-                    className='h-[28px] w-[28px] object-contain'
+                        src={search}
+                        alt='search'
+                        className='h-[28px] w-[28px] object-contain'
                     />
                 </div>
             </div>
