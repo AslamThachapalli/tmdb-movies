@@ -58,8 +58,8 @@ export default async function Home() {
   return (
     <div className="mx-auto max-w-screen-xl py-7 px-10 xl:px-0">
       <h1 className="text-2xl font-semibold mb-4">Popular Movies</h1>
-      <div className="grid grid-cols-10 gap-6">
-        <div className="col-span-2">
+      <div className="grid grid-cols-1 lg:grid-cols-10 gap-6">
+        <div className="lg:col-span-2">
           <div className="flex flex-col gap-4">
             <div
               className="border shadow-md w-full p-4 h-[50px] rounded-lg flex justify-between items-center"
@@ -102,47 +102,52 @@ export default async function Home() {
           </div>
         </div>
 
-        <div className="col-span-8 grid grid-cols-5 gap-6">
+        <div className="lg:col-span-8">
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
           {
             movies.map((movie, index) => (
-              <div
-                key={`movie-${index}`}
-                className="col-span-1 min-h-[350px] w-[180px] rounded-xl shadow-lg border overflow-hidden">
-                <div className="grid grid-rows-4 h-full">
-                  <img
-                    src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${movie.imageUrl}`}
-                    alt="image"
-                    className="row-span-3 object-contain">
-                  </img>
-
-                  <div className="relative row-span-1">
-                    <div className="absolute left-2 -top-5 h-[34px] w-[34px] rounded-full bg-black flex justify-center items-center">
-                      <RadialProgressBar percentage={movie.voteAvg * 10} />
-                      <div className="absolute text-white font-bold text-[0.8rem] flex items-start justify-center">
-                        <h4>{getPopularity(movie.voteAvg)}</h4>
-                        <p className="text-[4px] mt-1">%</p>
+              <div className="col-span-1">
+                <div
+                  key={`movie-${index}`}
+                  className="w-full rounded-xl shadow-lg border overflow-hidden">
+                  <div className="grid grid-rows-5 h-full">
+                    <img
+                      src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${movie.imageUrl}`}
+                      alt="image"
+                      className="row-span-4 object-contain">
+                    </img>
+                    
+                    <div className="relative row-span-1">
+                      <div className="absolute left-2 -top-5 h-[34px] w-[34px] rounded-full bg-black flex justify-center items-center">
+                        <RadialProgressBar percentage={movie.voteAvg * 10} />
+                        <div className="absolute text-white font-bold text-[0.8rem] flex items-start justify-center">
+                          <h4>{getPopularity(movie.voteAvg)}</h4>
+                          <p className="text-[4px] mt-1">%</p>
+                        </div>
                       </div>
-                    </div>
-
-                    <div
-                      className="absolute bottom-0 p-2 flex flex-col items-start"
-                    >
-                      <a
-                        className="text-sm font-bold hover:text-blue-500 leading-5"
-                        href="/"
+                      <div
+                        className="absolute bottom-0 p-2 flex flex-col items-start"
                       >
-                        {movie.title}
-                      </a>
-                      <p className="text-sm text-gray-500">{formatDate(movie.releasedOn)}</p>
+                        <a
+                          className="text-sm font-bold hover:text-blue-500 leading-5"
+                          href="/"
+                        >
+                          {movie.title}
+                        </a>
+                        <p className="text-sm text-gray-500">{formatDate(movie.releasedOn)}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             ))
           }
+          </div>
+          
 
           <div 
-          className="col-span-5 w-full h-[50px] bg-[#00B4E3] flex items-center justify-center rounded-lg"
+          className="col-span-5 w-full h-[50px] bg-[#00B4E3] flex items-center justify-center rounded-lg mt-6"
           >
             <a
             className="font-bold text-2xl text-white hover:text-black"

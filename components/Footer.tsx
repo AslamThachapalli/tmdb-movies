@@ -3,52 +3,61 @@ import footerLogo from '@/public/svg/footer-logo.svg'
 
 export default function Footer() {
     return (
-        <div className="w-full bg-[#032541] flex items-center py-10">
+        <div className="w-full bg-[#032541] flex items-center justify-center py-10 px-10">
             <div
-                className="mx-auto w-full max-w-screen-lg grid grid-cols-5"
+                className="mx-auto w-full max-w-screen-lg grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4"
             >
-                <Image
-                    src={footerLogo}
-                    alt="footerLogo"
-                    className="h-[94px] w-auto"
-                />
+                <div className="col-span-1 flex justify-center">
+                    <Image
+                        src={footerLogo}
+                        alt="footerLogo"
+                        className="h-[94px] w-auto"
+                    />
+                </div>
 
-                <FooterLinks
-                    title="The Basics"
-                    links={[
-                        'About TMDB',
-                        'Contact Us',
-                        'Support Forums',
-                        'API',
-                        'System Status',
-                    ]}
-                />
+                <div className="col-span-1 sm:col-span-2 lg:col-span-4">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
 
-                <FooterLinks
-                    title="Get Involved"
-                    links={[
-                        'Contribution Bible',
-                        'Add New Movie',
-                        'Add New TV Show',
-                    ]}
-                />
-                <FooterLinks
-                    title="Community"
-                    links={[
-                        'Guidelines',
-                        'Discussions',
-                        'Leaderboard',
-                    ]}
-                />
-                <FooterLinks
-                    title="Legal"
-                    links={[
-                        'Terms of Use',
-                        'API Terms of Use',
-                        'Privacy Policy',
-                        'DMCA Policy',
-                    ]}
-                />
+                        <FooterLinks
+                            title="The Basics"
+                            links={[
+                                'About TMDB',
+                                'Contact Us',
+                                'Support Forums',
+                                'API',
+                                'System Status',
+                            ]}
+                        />
+
+                        <FooterLinks
+                            title="Get Involved"
+                            links={[
+                                'Contribution Bible',
+                                'Add New Movie',
+                                'Add New TV Show',
+                            ]}
+                        />
+
+                        <FooterLinks
+                            title="Community"
+                            links={[
+                                'Guidelines',
+                                'Discussions',
+                                'Leaderboard',
+                            ]}
+                        />
+                        <FooterLinks
+                            title="Legal"
+                            links={[
+                                'Terms of Use',
+                                'API Terms of Use',
+                                'Privacy Policy',
+                                'DMCA Policy',
+                            ]}
+                        />
+                    </div>
+
+                </div>
             </div>
         </div>
     )
