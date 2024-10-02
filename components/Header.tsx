@@ -44,7 +44,7 @@ export default function Header() {
     return (
         <div>
             <div
-                className={`fixed w-full bg-[#032541] h-[64px] flex items-center z-20 transition-transform duration-500 ${scrollToTop ? 
+                className={`fixed w-full bg-[#032541] h-[64px] flex items-center z-50 transition-transform duration-500 ${scrollToTop ? 
                     "":
                     "-translate-y-[64px]"
                 }`}
@@ -121,7 +121,7 @@ export default function Header() {
                 </div>
             </div>
 
-            <div className={`fixed top-0 left-0 z-10 w-full h-full flex transition-transform ${toggle ?
+            <div className={`fixed top-0 left-0 z-40 w-full h-full flex transition-transform ${toggle ?
                 "" :
                 "-translate-x-full"
                 }`}>
