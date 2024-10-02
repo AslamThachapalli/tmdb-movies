@@ -62,7 +62,7 @@ export default async function Home() {
         <div className="lg:col-span-2">
           <div className="flex flex-col gap-4">
             <div
-              className="border shadow-md w-full p-4 h-[50px] rounded-lg flex justify-between items-center"
+              className="home-sidebar-toggle-button"
             >
               <h2 className="font-bold text-[16px]">Sort</h2>
               <Image
@@ -73,7 +73,7 @@ export default async function Home() {
             </div>
 
             <div
-              className="border shadow-md w-full p-4 h-[50px] rounded-lg flex justify-between items-center"
+              className="home-sidebar-toggle-button"
             >
               <h2 className="font-bold text-[16px]">Where To Watch</h2>
               <Image
@@ -84,7 +84,7 @@ export default async function Home() {
             </div>
 
             <div
-              className="border shadow-md w-full p-4 h-[50px] rounded-lg flex justify-between items-center"
+              className="home-sidebar-toggle-button"
             >
               <h2 className="font-bold text-[16px]">Filters</h2>
               <Image
