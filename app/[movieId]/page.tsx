@@ -30,7 +30,6 @@ const fetchMovieDetails = async (id: string): Promise<MovieDetailsProps | null> 
         const response = await client.get(`/${id}`)
 
         const details = response.data;
-        console.log(details)
 
         return {
             backdropImgUrl: details.backdrop_path,
@@ -84,7 +83,7 @@ export default async function MovieDetailPage({
 
                     <hr className="my-6"/>
 
-                    <Recommendations/>
+                    <Recommendations id={movieId}/>
                 </div>
 
                 <div className="col-span-1">

@@ -1,5 +1,5 @@
 import { MovieDetailsProps } from "@/app/[movieId]/page";
-import { posterImageBaseUrl } from "@/data/urls";
+import { backdropImageBaseUrl, posterImageBaseUrl } from "@/data/urls";
 import { convertMinutesToHours, formatDateDDMMYYYY } from "@/utils/formatters";
 import RadialProgressBar from "./RadialProgressBar";
 import { 
@@ -17,7 +17,7 @@ export default function MovieDetailsHero({ props }: { props: MovieDetailsProps }
 
                 <div id="img" className="flex justify-end absolute z-10 right-0">
                     <img
-                        src={`https://image.tmdb.org/t/p/w1920_and_h1080_bestv2${props.backdropImgUrl}`}
+                        src={`${backdropImageBaseUrl}${props.backdropImgUrl}`}
                         className="max-w-screen-xl h-full"
                     />
                     <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-l from-transparent to-white opacity-90"></div>
