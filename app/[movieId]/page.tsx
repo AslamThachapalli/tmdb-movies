@@ -76,9 +76,9 @@ export default async function MovieDetailPage({
                 props={details!}
             />
 
-            <div className="mx-auto max-w-screen-xl py-8 grid grid-cols-5 gap-5">
+            <div className="mx-auto max-w-screen-xl py-8 grid grid-cols-1 lg:grid-cols-5 gap-5 px-4">
 
-                <div className="col-span-4">
+                <div className="col-span-1 lg:col-span-4">
                     <TopCastSection id={movieId}/>
 
                     <hr className="my-6"/>
