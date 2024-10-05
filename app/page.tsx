@@ -40,6 +40,8 @@ const fetchPopularMovies = async (): Promise<PopularMovieProps[]> => {
   }
 }
 
+export const revalidate = 36000 // invalidate every 10 hrs
+
 export default async function Home() {
   const movies = await fetchPopularMovies();
 
@@ -95,9 +97,11 @@ export default async function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
             {
               movies.map((movie, index) => (
-                <div className="col-span-1">
+                <div
+                  key={`movie-${index}`}
+                  className="col-span-1"
+                >
                   <div
-                    key={`movie-${index}`}
                     className="w-full rounded-xl shadow-lg border overflow-hidden">
                     <div className="grid grid-rows-5 h-full">
                       <Link
