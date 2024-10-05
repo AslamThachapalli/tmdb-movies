@@ -6,7 +6,6 @@ import tmdbLogo from '@/public/svg/tmdb-logo.svg'
 import plusIcon from '@/public/svg/plus-icon.svg'
 import search from '@/public/svg/search.svg'
 import footerLogo from '@/public/svg/footer-logo.svg'
-import menuIcon from '@/public/svg/menu.svg'
 import { useEffect, useState } from 'react';
 import { Bars3Icon } from '@heroicons/react/24/solid'
 

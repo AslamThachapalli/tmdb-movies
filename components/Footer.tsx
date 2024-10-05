@@ -1,5 +1,6 @@
 import Image from "next/image"
 import footerLogo from '@/public/svg/footer-logo.svg'
+import { title } from "process"
 
 export default function Footer() {
     return (
@@ -69,8 +70,8 @@ const FooterLinks = (props: { title: string, links: string[] }) => {
             <h1 className="font-bold text-lg mb-1 uppercase">{props.title}</h1>
 
             {
-                props.links.map(link => (
-                    <a className="cursor-pointer">{link}</a>
+                props.links.map((link, index) => (
+                    <a key={`${title}-${index}`} className="cursor-pointer">{link}</a>
                 ))
             }
         </div>

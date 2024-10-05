@@ -54,6 +54,21 @@ const fetchMovieDetails = async (id: string): Promise<MovieDetailsProps | null> 
     }
 }
 
+export const revalidate = 36000
+
+export async function generateStaticParams() {
+    const response = await client.get('/popular', {
+        params: {
+            page: 1
+        }
+    })
+    const movies = response.data.results
+
+    return movies.map((movie: any) => ({
+        movieId: String(movie.id)
+    }))
+}
+
 export default async function MovieDetailPage({
     params: { movieId },
 }: {
@@ -79,11 +94,11 @@ export default async function MovieDetailPage({
             <div className="mx-auto max-w-screen-xl py-8 grid grid-cols-1 lg:grid-cols-5 gap-5 px-4">
 
                 <div className="col-span-1 lg:col-span-4">
-                    <TopCastSection id={movieId}/>
+                    <TopCastSection id={movieId} />
 
-                    <hr className="my-6"/>
+                    <hr className="my-6" />
 
-                    <Recommendations id={movieId}/>
+                    <Recommendations id={movieId} />
                 </div>
 
                 <div className="col-span-1">

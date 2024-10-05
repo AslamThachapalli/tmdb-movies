@@ -107,6 +107,7 @@ export default function MovieDetailsHero({ props }: { props: MovieDetailsProps }
                 <div className="lg:w-auto w-full lg:aspect-auto aspect-[2/1.5] flex lg:justify-end absolute z-10 lg:right-0">
                     <img
                         src={`${backdropImageBaseUrl}${props.backdropImgUrl}`}
+                        alt={`${props.title}`}
                         className="max-w-screen-xl h-full"
                     />
                     <div className="hidden lg:block absolute top-0 left-0 w-full h-full bg-gradient-to-l from-transparent to-white opacity-90"></div>
